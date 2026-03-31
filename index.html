@@ -83,6 +83,25 @@
   .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem; }
   .tag { padding: 0.45rem 1.1rem; border: 1px solid var(--border); border-radius: 2px; font-size: 0.8rem; font-weight: 500; color: var(--black); }
 
+  /* CASE STUDIES */
+  .case-studies { padding: 8rem 3rem; border-top: 1px solid var(--border); background: #f0ede6; }
+  .case-studies .section-label { color: var(--gray); }
+  .case-studies-title { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; margin-bottom: 0.5rem; line-height: 1.15; }
+  .case-studies-sub { font-size: 1rem; color: var(--gray); margin-bottom: 4rem; }
+  .case-card { background: var(--white); border-radius: 8px; padding: 3rem; margin-bottom: 1.5rem; position: relative; transition: transform 0.2s; }
+  .case-card:hover { transform: translateY(-2px); }
+  .case-card:last-child { margin-bottom: 0; }
+  .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
+  .case-category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .case-arrow { font-size: 1.2rem; color: var(--gray); text-decoration: none; transition: color 0.2s; line-height: 1; }
+  .case-arrow:hover { color: var(--black); }
+  .case-title { font-size: 1.6rem; font-weight: 700; line-height: 1.2; margin-bottom: 2rem; }
+  .case-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+  .case-col-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.6rem; }
+  .case-col-text { font-size: 0.95rem; line-height: 1.7; color: var(--black); }
+  .case-results { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .case-badge { padding: 0.5rem 1rem; background: var(--green-dark); color: var(--white); font-size: 0.8rem; font-weight: 700; border-radius: 4px; }
+
   /* SERVICES */
   .services { padding: 8rem 3rem; border-top: 1px solid var(--border); }
   .services .section-label { color: var(--gray); }
@@ -138,6 +157,7 @@
   <div class="nav-logo">Lukáš Čikanek</div>
   <ul class="nav-links">
     <li><a href="#framework">Přístup</a></li>
+    <li><a href="#case-studies">Case studies</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#about">O mně</a></li>
     <li><a href="#services">Služby</a></li>
@@ -196,6 +216,82 @@
       <div class="step-num">06</div>
       <div class="step-title">Category</div>
       <div class="step-desc">Jak budovat pozici v kategorii a posilovat brand long-term.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-studies" id="case-studies">
+  <div class="section-label">Výsledky</div>
+  <h2 class="case-studies-title">Case Studies</h2>
+  <p class="case-studies-sub">Konkrétní výsledky. Žádné vágní sliby.</p>
+
+  <div class="case-card">
+    <div class="case-header">
+      <div class="case-category">E-Commerce · FMCG</div>
+      <a href="#contact" class="case-arrow">↗</a>
+    </div>
+    <h3 class="case-title">Škálování e-shopu o 240 % za 12 měsíců</h3>
+    <div class="case-body">
+      <div>
+        <div class="case-col-label">Problém</div>
+        <p class="case-col-text">Stagnující tržby při rostoucím CAC. Absence jasné strategie a závislost na jednom kanálu.</p>
+      </div>
+      <div>
+        <div class="case-col-label">Řešení</div>
+        <p class="case-col-text">Nový media mix, restrukturalizace funnelu a zavedení attribution modelu pro přesné měření.</p>
+      </div>
+    </div>
+    <div class="case-results">
+      <span class="case-badge">+240 % revenue</span>
+      <span class="case-badge">-35 % CAC</span>
+      <span class="case-badge">+180 % ROAS</span>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <div class="case-header">
+      <div class="case-category">SaaS · B2B</div>
+      <a href="#contact" class="case-arrow">↗</a>
+    </div>
+    <h3 class="case-title">Go-to-market strategie pro SaaS startup</h3>
+    <div class="case-body">
+      <div>
+        <div class="case-col-label">Problém</div>
+        <p class="case-col-text">Produkt bez product-market fit signálů na trhu. Nízká konverze z trialu a nejasný positioning.</p>
+      </div>
+      <div>
+        <div class="case-col-label">Řešení</div>
+        <p class="case-col-text">Behaviorální výzkum, nový positioning, optimalizace onboardingu a cílená acquisition strategie.</p>
+      </div>
+    </div>
+    <div class="case-results">
+      <span class="case-badge">+320 % trial-to-paid</span>
+      <span class="case-badge">2× pipeline</span>
+      <span class="case-badge">55 % snížení churn</span>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <div class="case-header">
+      <div class="case-category">Retail · D2C</div>
+      <a href="#contact" class="case-arrow">↗</a>
+    </div>
+    <h3 class="case-title">Brand repositioning a vstup do nové kategorie</h3>
+    <div class="case-body">
+      <div>
+        <div class="case-col-label">Problém</div>
+        <p class="case-col-text">Značka uvězněná v price war, eroze marže a neschopnost oslovit nové zákaznické segmenty.</p>
+      </div>
+      <div>
+        <div class="case-col-label">Řešení</div>
+        <p class="case-col-text">Výzkum CEPs, nový positioning mimo cenovou kategorii a kampaň zaměřená na mentální dostupnost.</p>
+      </div>
+    </div>
+    <div class="case-results">
+      <span class="case-badge">+18 % marže</span>
+      <span class="case-badge">+44 % brand awareness</span>
+      <span class="case-badge">2 nové segmenty</span>
     </div>
   </div>
 </section>
@@ -284,7 +380,7 @@
     <div class="form-group"><label class="form-label">Jméno</label><input class="form-input" type="text" placeholder="Vaše jméno"></div>
     <div class="form-group"><label class="form-label">E-mail</label><input class="form-input" type="email" placeholder="vas@email.cz"></div>
     <div class="form-group"><label class="form-label">Zpráva</label><textarea class="form-textarea" placeholder="O čem chcete mluvit?"></textarea></div>
-    <a href="mailto:lukas@cikanek.cz" class="btn-white">Odeslat zprávu</a>
+    <a href="/cdn-cgi/l/email-protection#7d1108161c0e3d1e14161c131816531e07" class="btn-white">Odeslat zprávu</a>
   </div>
 </section>
 
@@ -293,16 +389,10 @@
   <ul class="footer-links">
     <li><a href="#">LinkedIn</a></li>
     <li><a href="#">Twitter / X</a></li>
-    <li><a href="mailto:lukas@cikanek.cz">E-mail</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#1b776e707a685b7872707a757e70357861">E-mail</a></li>
   </ul>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleFaq(el) {
-    const isOpen = el.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) el.classList.add('open');
-  }
-</script>
-</body>
-</html>
+    const isOpen = el.class
