@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ing. Lukáš Cikánek — Marketingový stratég</title>
+<title>Ing. Lukáš Cikánek — Marketing Strategist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root { --black: #0d0d0d; --white: #f5f3ee; --green-dark: #1a3028; --green-card: #1e3830; --gray: #6b6b6b; --border: #e0ddd6; --font: 'Outfit', sans-serif; }
@@ -18,12 +18,10 @@
   .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--gray); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--black); }
   .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
-
   .lang-switcher { display: flex; border: 1.5px solid var(--border); border-radius: 6px; overflow: hidden; }
   .lang-btn { padding: 0.4rem 0.85rem; font-family: var(--font); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border: none; background: transparent; cursor: pointer; color: var(--gray); transition: background 0.2s, color 0.2s; }
   .lang-btn.active { background: var(--black); color: var(--white); }
   .lang-btn:not(.active):hover { background: var(--border); color: var(--black); }
-
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--black); transition: all 0.3s; }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -34,41 +32,74 @@
   .mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--black); text-decoration: none; padding: 1rem 0; border-bottom: 1px solid var(--border); }
   .mobile-menu a:last-child { border-bottom: none; }
 
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 8rem 3rem 5rem; max-width: 900px; }
-  .hero-eyebrow { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
-  .hero-title { font-size: clamp(3rem, 7vw, 6rem); font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; color: var(--black); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
-  .hero-sub { font-size: 1.1rem; line-height: 1.7; color: var(--gray); max-width: 55ch; margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 8rem 3rem 5rem; }
+  .hero-eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .hero-title { font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.04em; color: var(--black); margin-bottom: 2.5rem; max-width: 18ch; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .hero-title em { font-style: normal; color: var(--green-dark); }
+  .hero-sub { font-size: 1.15rem; line-height: 1.75; color: var(--gray); max-width: 52ch; margin-bottom: 3.5rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
   .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+  .hero-proof { margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; gap: 4rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease forwards 1s; }
+  .proof-item { display: flex; flex-direction: column; gap: 0.3rem; }
+  .proof-number { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; color: var(--black); }
+  .proof-label { font-size: 0.75rem; font-weight: 500; color: var(--gray); letter-spacing: 0.05em; }
+
   .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: var(--black); color: var(--white); font-family: var(--font); font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 2px solid var(--black); transition: background 0.2s, border-color 0.2s; }
   .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
   .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: transparent; color: var(--black); font-family: var(--font); font-size: 0.9rem; font-weight: 600; text-decoration: none; border: 2px solid var(--border); transition: border-color 0.2s; }
   .btn-secondary:hover { border-color: var(--black); }
 
-  .framework { background: var(--green-dark); padding: 7rem 3rem; color: var(--white); }
+  .manifesto { padding: 8rem 3rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; }
+  .manifesto-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); padding-top: 0.5rem; }
+  .manifesto-headline { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.25; margin-bottom: 2rem; }
+  .manifesto-headline em { font-style: normal; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 6px; }
+  .manifesto-text { font-size: 1rem; line-height: 1.9; color: var(--gray); margin-bottom: 1.5rem; max-width: 65ch; }
+  .manifesto-provocation { font-size: 1.05rem; font-weight: 600; color: var(--black); border-left: 3px solid var(--black); padding-left: 1.5rem; margin-top: 2.5rem; line-height: 1.6; }
+
+  .framework { background: var(--green-dark); padding: 8rem 3rem; color: var(--white); }
   .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.5rem; }
-  .framework .section-label { color: rgba(255,255,255,0.5); }
-  .framework-header { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.15; margin-bottom: 1rem; color: var(--white); }
-  .framework-sub { font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 60ch; margin-bottom: 4rem; line-height: 1.7; }
+  .framework .section-label { color: rgba(255,255,255,0.45); }
+  .framework-header { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; color: var(--white); letter-spacing: -0.02em; }
+  .framework-sub { font-size: 1rem; color: rgba(255,255,255,0.55); max-width: 58ch; margin-bottom: 5rem; line-height: 1.75; }
   .framework-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr auto 1fr; gap: 0; align-items: stretch; }
-  .step-card { background: var(--green-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 2rem 1.5rem; transition: background 0.2s; }
-  .step-card:hover { background: #24443a; }
-  .step-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
-  .step-title { font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 0.8rem; }
-  .step-desc { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.55); }
-  .step-connector { display: flex; align-items: center; justify-content: center; padding: 0 0.3rem; color: rgba(255,255,255,0.25); font-size: 1.4rem; flex-shrink: 0; }
+  .step-card { background: var(--green-card); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 2rem 1.5rem; transition: background 0.2s; }
+  .step-card:hover { background: #243f35; }
+  .step-num { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); margin-bottom: 1rem; text-transform: uppercase; }
+  .step-title { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 0.8rem; }
+  .step-desc { font-size: 0.78rem; line-height: 1.65; color: rgba(255,255,255,0.5); }
+  .step-connector { display: flex; align-items: center; justify-content: center; padding: 0 0.4rem; color: rgba(255,255,255,0.2); font-size: 1.2rem; flex-shrink: 0; }
+  .framework-note { margin-top: 3rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; color: rgba(255,255,255,0.35); max-width: 70ch; line-height: 1.7; }
+
+  .brand-vs { padding: 8rem 3rem; border-top: 1px solid var(--border); }
+  .brand-vs .section-label { color: var(--gray); }
+  .brand-vs-header { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .brand-vs-sub { font-size: 1rem; color: var(--gray); max-width: 58ch; margin-bottom: 4rem; line-height: 1.7; }
+  .brand-vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .bv-card { background: var(--white); padding: 3rem; }
+  .bv-card.dark { background: var(--black); color: var(--white); }
+  .bv-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--gray); }
+  .bv-card.dark .bv-tag { color: rgba(255,255,255,0.4); }
+  .bv-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem; line-height: 1.2; }
+  .bv-card.dark .bv-title { color: var(--white); }
+  .bv-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .bv-list li { font-size: 0.9rem; line-height: 1.6; color: var(--gray); padding-left: 1.2rem; position: relative; }
+  .bv-list li::before { content: '—'; position: absolute; left: 0; color: var(--border); }
+  .bv-card.dark .bv-list li { color: rgba(255,255,255,0.55); }
+  .bv-card.dark .bv-list li::before { color: rgba(255,255,255,0.2); }
+  .bv-verdict { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--black); line-height: 1.6; }
+  .bv-card.dark .bv-verdict { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
 
   .case-studies { padding: 8rem 3rem; border-top: 1px solid var(--border); background: #f0ede6; }
   .case-studies .section-label { color: var(--gray); }
-  .case-studies-title { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; margin-bottom: 0.5rem; line-height: 1.15; }
+  .case-studies-header { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
   .case-studies-sub { font-size: 1rem; color: var(--gray); margin-bottom: 4rem; }
   .case-card { background: var(--white); border-radius: 8px; padding: 3rem; margin-bottom: 1.5rem; transition: transform 0.2s; }
   .case-card:hover { transform: translateY(-2px); }
   .case-card:last-child { margin-bottom: 0; }
   .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
-  .case-category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .case-category { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
   .case-arrow { font-size: 1.2rem; color: var(--gray); text-decoration: none; transition: color 0.2s; }
   .case-arrow:hover { color: var(--black); }
-  .case-title { font-size: 1.6rem; font-weight: 700; line-height: 1.2; margin-bottom: 2rem; }
+  .case-title { font-size: 1.6rem; font-weight: 800; line-height: 1.15; margin-bottom: 2rem; letter-spacing: -0.02em; }
   .case-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
   .case-col-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.6rem; }
   .case-col-text { font-size: 0.95rem; line-height: 1.7; color: var(--black); }
@@ -77,51 +108,55 @@
 
   .faq { padding: 8rem 3rem; border-top: 1px solid var(--border); }
   .faq .section-label { color: var(--gray); }
-  .faq-title { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; margin-bottom: 4rem; max-width: 24ch; line-height: 1.15; }
+  .faq-header { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 4rem; max-width: 22ch; letter-spacing: -0.02em; }
   .faq-list { border-top: 1px solid var(--border); }
   .faq-item { border-bottom: 1px solid var(--border); }
   .faq-trigger { width: 100%; background: none; border: none; padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; cursor: pointer; text-align: left; }
   .faq-trigger-left { display: flex; flex-direction: column; gap: 0.5rem; }
-  .faq-tag { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 2px; }
+  .faq-tag { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 2px; }
   .faq-question-text { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--black); font-family: var(--font); }
   .faq-icon { font-size: 1.5rem; font-weight: 300; color: var(--gray); flex-shrink: 0; transition: transform 0.3s; line-height: 1; margin-top: 4px; }
   .faq-item.open .faq-icon { transform: rotate(45deg); }
-  .faq-answer { font-size: 0.95rem; line-height: 1.8; color: var(--gray); padding-bottom: 1.8rem; display: none; max-width: 75ch; }
+  .faq-answer { font-size: 0.95rem; line-height: 1.85; color: var(--gray); padding-bottom: 1.8rem; display: none; max-width: 72ch; }
   .faq-item.open .faq-answer { display: block; }
 
   .about { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; border-top: 1px solid var(--border); }
-  .about-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .about-name { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
-  .about-text { font-size: 1rem; line-height: 1.85; color: var(--black); margin-bottom: 1.5rem; }
+  .about-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); margin-bottom: 1.5rem; }
+  .about-name { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.3rem; }
+  .about-title-sub { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+  .about-text { font-size: 1rem; line-height: 1.9; color: var(--black); margin-bottom: 1.5rem; }
   .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem; }
-  .tag { padding: 0.45rem 1.1rem; border: 1px solid var(--border); border-radius: 2px; font-size: 0.8rem; font-weight: 500; color: var(--black); }
+  .tag { padding: 0.45rem 1.1rem; border: 1px solid var(--border); border-radius: 2px; font-size: 0.78rem; font-weight: 600; color: var(--black); }
 
   .services { padding: 8rem 3rem; border-top: 1px solid var(--border); }
   .services .section-label { color: var(--gray); }
-  .services-title { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; margin-bottom: 5rem; max-width: 20ch; line-height: 1.15; }
+  .services-header { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .services-sub { font-size: 1rem; color: var(--gray); max-width: 55ch; margin-bottom: 5rem; line-height: 1.7; }
   .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
   .service-card { background: var(--white); padding: 3rem; transition: background 0.2s; }
-  .service-card:hover { background: #eeebe4; }
-  .service-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 1.2rem; }
-  .service-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
-  .service-desc { font-size: 0.95rem; line-height: 1.8; color: var(--gray); }
+  .service-card:hover { background: #edeae3; }
+  .service-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; color: var(--gray); margin-bottom: 1.5rem; text-transform: uppercase; }
+  .service-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; letter-spacing: -0.01em; }
+  .service-desc { font-size: 0.92rem; line-height: 1.8; color: var(--gray); margin-bottom: 1.5rem; }
+  .service-outcome { font-size: 0.8rem; font-weight: 600; color: var(--black); border-top: 1px solid var(--border); padding-top: 1rem; }
 
   .contact { background: var(--black); color: var(--white); padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
-  .contact-title { font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 800; line-height: 1.05; margin-bottom: 1.5rem; }
-  .contact-sub { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.55); margin-bottom: 3rem; }
+  .contact-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.0; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
+  .contact-sub { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.5); margin-bottom: 3rem; }
   .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
   .contact-item { display: flex; align-items: center; gap: 1rem; }
-  .contact-item-icon { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .contact-item-icon { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
   .contact-item-text { display: flex; flex-direction: column; gap: 0.2rem; }
-  .contact-item-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .contact-item-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
   .contact-item-value { font-size: 1rem; font-weight: 500; color: var(--white); text-decoration: none; transition: color 0.2s; }
-  .contact-item-value:hover { color: rgba(255,255,255,0.7); }
-  .contact-note { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.4); margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; }
+  .contact-item-value:hover { color: rgba(255,255,255,0.65); }
+  .contact-note { font-size: 0.83rem; line-height: 1.8; color: rgba(255,255,255,0.35); margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; }
+  .contact-right-text { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,0.55); }
 
-  footer { padding: 2rem 3rem; border-top: 1px solid rgba(255,255,255,0.08); background: var(--black); display: flex; justify-content: space-between; align-items: center; }
-  .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+  footer { padding: 2rem 3rem; border-top: 1px solid rgba(255,255,255,0.07); background: var(--black); display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
   .footer-links { display: flex; gap: 2rem; list-style: none; }
-  .footer-links a { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--white); }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -129,8 +164,10 @@
   @media (max-width: 1100px) { .framework-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } .step-connector { display: none; } }
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .hamburger { display: flex; }
-    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero { padding: 7rem 1.5rem 4rem; } .hero-proof { gap: 2.5rem; }
+    .manifesto { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 2rem; }
     .framework { padding: 5rem 1.5rem; } .framework-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .brand-vs { padding: 5rem 1.5rem; } .brand-vs-grid { grid-template-columns: 1fr; }
     .case-studies { padding: 5rem 1.5rem; } .case-card { padding: 2rem; } .case-body { grid-template-columns: 1fr; gap: 1.5rem; }
     .faq { padding: 5rem 1.5rem; }
     .about { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
@@ -148,7 +185,6 @@
   <ul class="nav-links">
     <li><a href="#framework" data-cz="Přístup" data-en="Approach">Přístup</a></li>
     <li><a href="#case-studies">Case Studies</a></li>
-    <li><a href="#faq">FAQ</a></li>
     <li><a href="#about" data-cz="O mně" data-en="About">O mně</a></li>
     <li><a href="#services" data-cz="Služby" data-en="Services">Služby</a></li>
     <li><a href="#contact" data-cz="Kontakt" data-en="Contact">Kontakt</a></li>
@@ -158,81 +194,121 @@
       <button class="lang-btn active" id="btnCZ" onclick="setLang('cz')">CZ</button>
       <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#framework" onclick="closeMenu()" data-cz="Přístup" data-en="Approach">Přístup</a>
   <a href="#case-studies" onclick="closeMenu()">Case Studies</a>
-  <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#about" onclick="closeMenu()" data-cz="O mně" data-en="About">O mně</a>
   <a href="#services" onclick="closeMenu()" data-cz="Služby" data-en="Services">Služby</a>
   <a href="#contact" onclick="closeMenu()" data-cz="Kontakt" data-en="Contact">Kontakt</a>
 </div>
 
 <section class="hero">
-  <div class="hero-eyebrow" data-cz="Marketingový stratég · Growth Partner" data-en="Marketing Strategist · Growth Partner">Marketingový stratég · Growth Partner</div>
-  <h1 class="hero-title" data-cz="Pomáhám značkám růst<br>na základě dat,<br>ne dojmů." data-en="I help brands grow<br>on data,<br>not gut feeling.">Pomáhám značkám růst<br>na základě dat,<br>ne dojmů.</h1>
-  <p class="hero-sub" data-cz="Propojuji e-commerce performance, brand building a behaviorální vědu do strategie, která přináší měřitelný růst." data-en="I combine e-commerce performance, brand building and behavioural science into a strategy that delivers measurable growth.">Propojuji e-commerce performance, brand building a behaviorální vědu do strategie, která přináší měřitelný růst.</p>
+  <div class="hero-eyebrow" data-cz="Marketing Strategist · Growth Partner · Evidence-Based" data-en="Marketing Strategist · Growth Partner · Evidence-Based">Marketing Strategist · Growth Partner · Evidence-Based</div>
+  <h1 class="hero-title" data-cz="Většina marketingu utrácí peníze. &lt;em&gt;Dobrý&lt;/em&gt; marketing je buduje." data-en="Most marketing spends money. &lt;em&gt;Good&lt;/em&gt; marketing builds it.">Většina marketingu utrácí peníze. <em>Dobrý</em> marketing je buduje.</h1>
+  <p class="hero-sub" data-cz="Pomáhám firmám propojit brand a performance do jediné strategie — té, která přináší růst dnes i za pět let. Bez dojmů. Bez klišé. S daty." data-en="I help companies connect brand and performance into a single strategy — one that drives growth today and in five years. No gut feelings. No clichés. Just data.">Pomáhám firmám propojit brand a performance do jediné strategie — té, která přináší růst dnes i za pět let. Bez dojmů. Bez klišé. S daty.</p>
   <div class="hero-buttons">
     <a href="#contact" class="btn-primary" data-cz="Domluvit konzultaci →" data-en="Book a consultation →">Domluvit konzultaci →</a>
-    <a href="#case-studies" class="btn-secondary" data-cz="Zobrazit case studies" data-en="View case studies">Zobrazit case studies</a>
+    <a href="#framework" class="btn-secondary" data-cz="Jak přemýšlím" data-en="How I think">Jak přemýšlím</a>
+  </div>
+  <div class="hero-proof">
+    <div class="proof-item"><span class="proof-number">10+</span><span class="proof-label" data-cz="let v marketingu" data-en="years in marketing">let v marketingu</span></div>
+    <div class="proof-item"><span class="proof-number">B2B, D2C, SaaS</span><span class="proof-label" data-cz="segmenty" data-en="segments">segmenty</span></div>
+    <div class="proof-item"><span class="proof-number">3×</span><span class="proof-label" data-cz="průměrný growth klientů" data-en="average client growth">řměrný growth klientů</span></div>
+  </div>
+</section>
+
+<section class="manifesto" id="manifesto">
+  <div class="manifesto-label" data-cz="Pohled na věc" data-en="Point of view">Pohled na věc</div>
+  <div>
+    <h2 class="manifesto-headline" data-cz="Marketing není nákladová položka. Je to &lt;em&gt;páka na byznys&lt;/em&gt; — pokud víte, co děláte." data-en="Marketing isn't a cost centre. It's a &lt;em&gt;business lever&lt;/em&gt; — if you know what you're doing.">Marketing není nákladová položka. Je to <em>páka na byznys</em> — pokud víte, co děláte.</h2>
+    <p class="manifesto-text" data-cz="Většina firem řeší marketing jako sérii taktik. Kampaň tady, social media tam, retargeting. Výsledek? Spousta aktivity, málo růstu. Problém není v exekuci — je ve strategii, která za tím stojí." data-en="Most companies treat marketing as a series of tactics. A campaign here, social media there, retargeting. The result? Plenty of activity, little growth. The problem isn't execution — it's the strategy behind it.">Většina firem řeší marketing jako sérii taktik. Kampaň tady, social media tam, retargeting. Výsledek? Spousta aktivity, málo růstu. Problém není v exekuci — je ve strategii, která za tím stojí.</p>
+    <p class="manifesto-text" data-cz="Evidence-based marketing vychází z jednoduchého principu: nejprve porozumět, pak rozhodnout. Ne podle pocitu, ne podle toho, co dělá konkurence. Podle dat, výzkumu zákaznického chování a kauzální logiky." data-en="Evidence-based marketing starts from a simple principle: understand first, then decide. Not by gut feeling, not by what competitors do. By data, customer behaviour research and causal logic.">Evidence-based marketing vychází z jednoduchého principu: nejprve porozumět, pak rozhodnout. Ne podle pocitu, ne podle toho, co dělá konkurence. Podle dat, výzkumu zákaznického chování a kauzální logiky.</p>
+    <div class="manifesto-provocation" data-cz="Pokud váš marketing nedékáže vys větlit, proč funguje — pravděpodobně nefunguje." data-en="If your marketing can't explain why it works — it probably doesn't.">Pokud váš marketing nedékáže vys větlit, proč funguje — pravděpodobně nefunguje.</div>
   </div>
 </section>
 
 <section class="framework" id="framework">
-  <div class="section-label" data-cz="Přístup" data-en="Approach">Přístup</div>
-  <h2 class="framework-header" data-cz="Jak přemýšlím o růstu" data-en="How I think about growth">Jak přemýšlím o růstu</h2>
-  <p class="framework-sub" data-cz="Evidence-based marketing: každé rozhodnutí je podložené daty, výzkumem a behaviorální vědou. Žádné dojmy, žádná klišé." data-en="Evidence-based marketing: every decision is grounded in data, research and behavioural science. No gut feelings, no clichés.">Evidence-based marketing: každé rozhodnutí je podložené daty, výzkumem a behaviorální vědou. Žádné dojmy, žádná klišé.</p>
+  <div class="section-label">Framework</div>
+  <h2 class="framework-header">Money → Signal → Behavior → Sales → Efficiency → Category</h2>
+  <p class="framework-sub" data-cz="Šest kroků, které propojují rozpočet s výsledkem. Každý krok vychází z předchozího. Žádný nelze přeskočit." data-en="Six steps connecting budget to outcome. Each step builds on the previous. None can be skipped.">Šest kroků, které propojují rozpočet s výsledkem. Každý krok vychází z předchozího. Žádný nelze přeskočit.</p>
   <div class="framework-grid">
-    <div class="step-card"><div class="step-num">01</div><div class="step-title">Money</div><div class="step-desc" data-cz="Kolik investovat a kam alokovat rozpočet pro maximální efekt." data-en="How much to invest and where to allocate budget for maximum impact.">Kolik investovat a kam alokovat rozpočet pro maximální efekt.</div></div>
+    <div class="step-card"><div class="step-num">01</div><div class="step-title">Money</div><div class="step-desc" data-cz="Kde jdou peníze? Kolik a kam. Rozpočtová alokace je strategické rozhodnutí č. 1." data-en="Where does the money go? How much and where. Budget allocation is strategic decision #1.">Kde jdou peníze? Kolik a kam. Rozpočtová alokace je strategické rozhodnutí č. 1.</div></div>
     <div class="step-connector">→</div>
-    <div class="step-card"><div class="step-num">02</div><div class="step-title">Signal</div><div class="step-desc" data-cz="Jakou zprávu vysílat trhu, aby oslovila správné publikum." data-en="What message to send to the market to reach the right audience.">Jakou zprávu vysílat trhu, aby oslovila správné publikum.</div></div>
+    <div class="step-card"><div class="step-num">02</div><div class="step-title">Signal</div><div class="step-desc" data-cz="Jaký signál vysíláte trhu? Brand, positioning, zpráva. Co si o vás lidé myslí, i když právě nekupují." data-en="What signal are you sending to the market? Brand, positioning, message. What people think about you even when they're not buying.">Jaký signál vysíláte trhu? Brand, positioning, zpráva. Co si o vás lidé myslí, i když právě nekupují.</div></div>
     <div class="step-connector">→</div>
-    <div class="step-card"><div class="step-num">03</div><div class="step-title">Behaviour</div><div class="step-desc" data-cz="Jak ovlivnit rozhodování zákazníků skrze behaviorální principy." data-en="How to influence customer decisions through behavioural principles.">Jak ovlivnit rozhodování zákazníků skrze behaviorální principy.</div></div>
+    <div class="step-card"><div class="step-num">03</div><div class="step-title">Behavior</div><div class="step-desc" data-cz="Jak se zákazníci skutečně rozhodují? Psychologie volby, Category Entry Points, mentální dostupnost." data-en="How do customers actually decide? Psychology of choice, Category Entry Points, mental availability.">Jak se zákazníci skutečně rozhodují? Psychologie volby, Category Entry Points, mentální dostupnost.</div></div>
     <div class="step-connector">→</div>
-    <div class="step-card"><div class="step-num">04</div><div class="step-title">Sales</div><div class="step-desc" data-cz="Jak konvertovat zájem na tržby s měřitelným dopadem." data-en="How to convert interest into revenue with measurable impact.">Jak konvertovat zájem na tržby s měřitelným dopadem.</div></div>
+    <div class="step-card"><div class="step-num">04</div><div class="step-title">Sales</div><div class="step-desc" data-cz="Jak se zájem mění v příjem? Konverzní architektura, funnel, propojení marketingu s obchodem." data-en="How does interest become revenue? Conversion architecture, funnel, connecting marketing with sales.">Jak se zájem mění v příjem? Konverzní architektura, funnel, propojení marketingu s obchodem.</div></div>
     <div class="step-connector">→</div>
-    <div class="step-card"><div class="step-num">05</div><div class="step-title">Efficiency</div><div class="step-desc" data-cz="Jak optimalizovat náklady a zlepšovat návratnost investic." data-en="How to optimise costs and improve return on investment.">Jak optimalizovat náklady a zlepšovat návratnost investic.</div></div>
+    <div class="step-card"><div class="step-num">05</div><div class="step-title">Efficiency</div><div class="step-desc" data-cz="Kde ztrácíme? Atribuce, ROI, eliminace marnotratných investic. Méně šumu, více signálu." data-en="Where are we losing? Attribution, ROI, eliminating wasteful investments. Less noise, more signal.">Kde ztrácíme? Atribuce, ROI, eliminace marnotratných investic. Méně šumu, více signálu.</div></div>
     <div class="step-connector">→</div>
-    <div class="step-card"><div class="step-num">06</div><div class="step-title">Category</div><div class="step-desc" data-cz="Jak budovat pozici v kategorii a posilovat brand dlouhodobě." data-en="How to build category position and strengthen the brand long-term.">Jak budovat pozici v kategorii a posilovat brand dlouhodobě.</div></div>
+    <div class="step-card"><div class="step-num">06</div><div class="step-title">Category</div><div class="step-desc" data-cz="Kdo vlastní kategorii, nepotřebuje bojovat o zákazníky. Dlouhodobá pozice = dlouhodobý growth." data-en="Whoever owns the category doesn't need to fight for customers. Long-term position = long-term growth.">Kdo vlastní kategorii, nepotřebuje bojovat o zákazníky. Dlouhodobá pozice = dlouhodobý growth.</div></div>
+  </div>
+  <p class="framework-note" data-cz="Tento framework není teorie. Je to mapa, podle které analyzuji každý byznys. Každý krok je měřitelný. Každé rozhodnutí je zdůvodněnitelné." data-en="This framework isn't theory. It's the map I use to analyse every business. Every step is measurable. Every decision is justifiable.">Tento framework není teorie. Je to mapa, podle které analyzuji každý byznys. Každý krok je měřitelný. Každé rozhodnutí je zdůvodněnitelné.</p>
+</section>
+
+<section class="brand-vs" id="approach">
+  <div class="section-label" data-cz="Proč to ostatní dělají špatně" data-en="Why others get it wrong">Proč to ostatní dělají špatně</div>
+  <h2 class="brand-vs-header" data-cz="Brand nebo performance? Špatná otázka." data-en="Brand or performance? Wrong question.">Brand nebo performance? Špatná otázka.</h2>
+  <p class="brand-vs-sub" data-cz="Firmy si vybírají buď jedno, nebo druhé. Výsledkem je buď krásná značka bez prodejů, nebo levné akvi zice bez loajality. Skutečný growth leží uprostřed — a tam pracuji já." data-en="Companies choose one or the other. The result is either a beautiful brand with no sales, or cheap acquisitions with no loyalty. Real growth lies in the middle — and that's where I work.">Firmy si vybírají buď jedno, nebo druhé. Výsledkem je buď krásná značka bez prodejů, nebo levné akvizice bez loajality. Skutečný growth leží uprostřed — a tam pracuji já.</p>
+  <div class="brand-vs-grid">
+    <div class="bv-card">
+      <div class="bv-tag" data-cz="Pouze brand" data-en="Brand only">Pouze brand</div>
+      <div class="bv-title" data-cz="Investujete do povědomí. Ale nevíte proč." data-en="You invest in awareness. But you don't know why.">Investujete do povědomí. Ale nevíte proč.</div>
+      <ul class="bv-list">
+        <li data-cz="Krásné kampaně, nejasný dopad na tržby" data-en="Beautiful campaigns, unclear revenue impact">Krásné kampaně, nejasný dopad na tržby</li>
+        <li data-cz="Awareness bez jasné vazby na nákupní rozhodnutí" data-en="Awareness without clear link to purchase decisions">Awareness bez jasné vazby na nákupní rozhodnutí</li>
+        <li data-cz="Neschopnost obhájit rozpočet před CFO" data-en="Unable to justify budget to CFO">Neschopnost obhájit rozpočet před CFO</li>
+        <li data-cz="Dlouhodobá eroze relevance" data-en="Long-term erosion of relevance">Dlouhodobá eroze relevance</li>
+      </ul>
+      <div class="bv-verdict" data-cz="Problém: brand bez performance je výdaj bez návratnosti." data-en="Problem: brand without performance is spend without return.">Problém: brand bez performance je výdaj bez návratnosti.</div>
+    </div>
+    <div class="bv-card dark">
+      <div class="bv-tag" data-cz="Pouze performance" data-en="Performance only">Pouze performance</div>
+      <div class="bv-title" data-cz="Optimalizujete konverze. Ale na úkor čeho?" data-en="You optimise conversions. But at what cost?">Optimalizujete konverze. Ale na úkor čeho?</div>
+      <ul class="bv-list">
+        <li data-cz="Klesající ROAS s každou další kampaní" data-en="Declining ROAS with every new campaign">Klesající ROAS s každou další kampaní</li>
+        <li data-cz="Závislost na placené akvizici bez organického záběru" data-en="Dependence on paid acquisition without organic reach">Závislost na placené akvizici bez organického záběru</li>
+        <li data-cz="Cenová válka bez diferenciace" data-en="Price war without differentiation">Cenová válka bez diferenciace</li>
+        <li data-cz="Zákazníci lojální jen k nejnižší ceně" data-en="Customers loyal only to the lowest price">Zákazníci lojální jen k nejnižší ceně</li>
+      </ul>
+      <div class="bv-verdict" data-cz="Problém: performance bez brandu je sprint bez cíle." data-en="Problem: performance without brand is a sprint without a destination.">Problém: performance bez brandu je sprint bez cíle.</div>
+    </div>
   </div>
 </section>
 
 <section class="case-studies" id="case-studies">
-  <div class="section-label" data-cz="Výsledky" data-en="Results">Výsledky</div>
-  <h2 class="case-studies-title">Case Studies</h2>
-  <p class="case-studies-sub" data-cz="Konkrétní výsledky. Žádné vágní sliby." data-en="Concrete results. No vague promises.">Konkrétní výsledky. Žádné vágní sliby.</p>
-
+  <div class="section-label" data-cz="Výsledky v praxi" data-en="Results in practice">Výsledky v praxi</div>
+  <h2 class="case-studies-header" data-cz="Čísla, která se nedá vymyslet." data-en="Numbers you can't make up.">Čísla, která se nedá vymyslet.</h2>
+  <p class="case-studies-sub" data-cz="Každý případ stojí na stejném základě: pochopení problému, hypotéza, test, škálování." data-en="Every case is built on the same foundation: understanding the problem, hypothesis, test, scale.">Každý případ stojí na stejném základě: pochopení problému, hypotéza, test, škálování.</p>
   <div class="case-card">
     <div class="case-header"><div class="case-category">E-Commerce · FMCG</div><a href="#contact" class="case-arrow">↗</a></div>
-    <h3 class="case-title" data-cz="Škálování e-shopu o 240 % za 12 měsíců" data-en="E-shop scaled by 240% in 12 months">Škálování e-shopu o 240 % za 12 měsíců</h3>
+    <h3 class="case-title" data-cz="Škálování e-shopu o 240 % za 12 měsíců bez zvýšení rozpočtu." data-en="E-shop scaled 240% in 12 months without increasing budget.">Škálování e-shopu o 240 % za 12 měsíců bez zvýšení rozpočtu.</h3>
     <div class="case-body">
-      <div><div class="case-col-label" data-cz="Problém" data-en="Challenge">Problém</div><p class="case-col-text" data-cz="Stagnující tržby při rostoucím CAC. Absence jasné strategie a závislost na jednom kanálu." data-en="Stagnating revenue with rising CAC. No clear strategy and over-reliance on a single channel.">Stagnující tržby při rostoucím CAC. Absence jasné strategie a závislost na jednom kanálu.</p></div>
-      <div><div class="case-col-label" data-cz="Řešení" data-en="Solution">Řešení</div><p class="case-col-text" data-cz="Nový mediální mix, restrukturalizace funnelu a zavedení atribučního modelu pro přesné měření." data-en="New media mix, funnel restructuring and implementation of an attribution model for precise measurement.">Nový mediální mix, restrukturalizace funnelu a zavedení atribučního modelu pro přesné měření.</p></div>
+      <div><div class="case-col-label" data-cz="Situace" data-en="Situation">Situace</div><p class="case-col-text" data-cz="Stagnující tržby při rostoucím CAC. Firma optimalizovala kampaně, ale ignorovala zákaznické chování a mediální mix." data-en="Stagnating revenue with rising CAC. The company optimised campaigns but ignored customer behaviour and media mix.">Stagnující tržby při rostoucím CAC. Firma optimalizovala kampaně, ale ignorovala zákaznické chování a mediální mix.</p></div>
+      <div><div class="case-col-label" data-cz="Zásah" data-en="Intervention">Zásah</div><p class="case-col-text" data-cz="Restrukturalizace funnelu, nový mediální mix založený na CEPs, zavedení atribučního modelu. Přesun části rozpočtu z konverzí do brand budování." data-en="Funnel restructuring, new media mix based on CEPs, attribution model implementation. Budget shifted from conversions to brand building.">Restrukturalizace funnelu, nový mediální mix založený na CEPs, zavedení atribučního modelu. Přesun části rozpočtu z konverzí do brand budování.</p></div>
     </div>
     <div class="case-results"><span class="case-badge">+240% revenue</span><span class="case-badge">-35% CAC</span><span class="case-badge">+180% ROAS</span></div>
   </div>
-
   <div class="case-card">
     <div class="case-header"><div class="case-category">SaaS · B2B</div><a href="#contact" class="case-arrow">↗</a></div>
-    <h3 class="case-title" data-cz="Go-to-market strategie pro SaaS startup" data-en="Go-to-market strategy for a SaaS startup">Go-to-market strategie pro SaaS startup</h3>
+    <h3 class="case-title" data-cz="Go-to-market strategie, která změnila konverzní poměr z trialu na placený plán." data-en="Go-to-market strategy that transformed trial-to-paid conversion.">Go-to-market strategie, která změnila konverzní poměr z trialu na placený plán.</h3>
     <div class="case-body">
-      <div><div class="case-col-label" data-cz="Problém" data-en="Challenge">Problém</div><p class="case-col-text" data-cz="Produkt bez signálů product-market fit na trhu. Nízká konverze z trialu a nejasný positioning." data-en="Product lacking product-market fit signals. Low trial conversion and unclear positioning.">Produkt bez signálů product-market fit na trhu. Nízká konverze z trialu a nejasný positioning.</p></div>
-      <div><div class="case-col-label" data-cz="Řešení" data-en="Solution">Řešení</div><p class="case-col-text" data-cz="Behaviorální výzkum, nový positioning, optimalizace onboardingu a cílená akviziční strategie." data-en="Behavioural research, new positioning, onboarding optimisation and a targeted acquisition strategy.">Behaviorální výzkum, nový positioning, optimalizace onboardingu a cílená akviziční strategie.</p></div>
+      <div><div class="case-col-label" data-cz="Situace" data-en="Situation">Situace</div><p class="case-col-text" data-cz="Skvělý produkt. Nejasné sdělení, nulový positioning, nízká konverze z trialu. Prodejní tým bez jasného ICP." data-en="Great product. Unclear message, zero positioning, low trial conversion. Sales team without a clear ICP.">Skvělý produkt. Nejasné sdělení, nulový positioning, nízká konverze z trialu. Prodejní tým bez jasného ICP.</p></div>
+      <div><div class="case-col-label" data-cz="Zásah" data-en="Intervention">Zásah</div><p class="case-col-text" data-cz="Behaviorální výzkum, redefinice ICP, nový positioning, redesign onboardingu. Propojení marketingu s obchodem přes shared metrics." data-en="Behavioural research, ICP redefinition, new positioning, onboarding redesign. Marketing and sales connected through shared metrics.">Behaviorální výzkum, redefinice ICP, nový positioning, redesign onboardingu. Propojení marketingu s obchodem přes shared metrics.</p></div>
     </div>
     <div class="case-results"><span class="case-badge">+320% trial-to-paid</span><span class="case-badge">2× pipeline</span><span class="case-badge" data-cz="55% snížení churn" data-en="55% churn reduction">55% snížení churn</span></div>
   </div>
-
   <div class="case-card">
     <div class="case-header"><div class="case-category">Retail · D2C</div><a href="#contact" class="case-arrow">↗</a></div>
-    <h3 class="case-title" data-cz="Brand repositioning a vstup do nové kategorie" data-en="Brand repositioning and entry into a new category">Brand repositioning a vstup do nové kategorie</h3>
+    <h3 class="case-title" data-cz="Vymanění z cenové války přes repositioning a mentální dostupnost." data-en="Escaping the price war through repositioning and mental availability.">Vymanění z cenové války přes repositioning a mentální dostupnost.</h3>
     <div class="case-body">
-      <div><div class="case-col-label" data-cz="Problém" data-en="Challenge">Problém</div><p class="case-col-text" data-cz="Značka uvězněná v cenové válce, eroze marže a neschopnost oslovit nové zákaznické segmenty." data-en="Brand trapped in a price war, eroding margins and inability to reach new customer segments.">Značka uvězněná v cenové válce, eroze marže a neschopnost oslovit nové zákaznické segmenty.</p></div>
-      <div><div class="case-col-label" data-cz="Řešení" data-en="Solution">Řešení</div><p class="case-col-text" data-cz="Výzkum CEPs, nový positioning mimo cenovou kategorii a kampaň zaměřená na mentální dostupnost." data-en="CEP research, new positioning outside the price category and a campaign focused on mental availability.">Výzkum CEPs, nový positioning mimo cenovou kategorii a kampaň zaměřená na mentální dostupnost.</p></div>
+      <div><div class="case-col-label" data-cz="Situace" data-en="Situation">Situace</div><p class="case-col-text" data-cz="Značka uvězněná v race to the bottom. Eroze marže, zákazníci odcházeli ke konkurenci při sebemenší slevě." data-en="Brand trapped in a race to the bottom. Margin erosion, customers leaving at the slightest discount from a competitor.">Značka uvězněná v race to the bottom. Eroze marže, zákazníci odcházeli ke konkurenci při sebemenší slevě.</p></div>
+      <div><div class="case-col-label" data-cz="Zásah" data-en="Intervention">Zásah</div><p class="case-col-text" data-cz="Mapování CEPs, repositioning mimo cenovou dimenzi, kampaň cílená na mentální dostupnost v klíčových situacích nákupu." data-en="CEP mapping, repositioning outside the price dimension, campaign targeting mental availability in key purchase situations.">Mapování CEPs, repositioning mimo cenovou dimenzi, kampaň cílená na mentální dostupnost v klíčových situacích nákupu.</p></div>
     </div>
     <div class="case-results"><span class="case-badge" data-cz="+18% marže" data-en="+18% margin">+18% marže</span><span class="case-badge">+44% brand awareness</span><span class="case-badge" data-cz="2 nové segmenty" data-en="2 new segments">2 nové segmenty</span></div>
   </div>
@@ -240,171 +316,74 @@
 
 <section class="faq" id="faq">
   <div class="section-label" data-cz="Časté otázky" data-en="FAQ">Časté otázky</div>
-  <h2 class="faq-title" data-cz="Co vás zajímá nejčastěji." data-en="Questions I get asked most.">Co vás zajímá nejčastěji.</h2>
+  <h2 class="faq-header" data-cz="Otázky, které dostávám nejčastěji." data-en="Questions I get asked most.">Otázky, které dostávám nejčastěji.</h2>
   <div class="faq-list">
-
-    <div class="faq-item">
-      <button class="faq-trigger" onclick="toggleFaq(this.parentElement)">
-        <div class="faq-trigger-left"><span class="faq-tag">Category Entry Points</span><span class="faq-question-text" data-cz="Co jsou Category Entry Points a proč jsou důležité?" data-en="What are Category Entry Points and why do they matter?">Co jsou Category Entry Points a proč jsou důležité?</span></div>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer" data-cz="Category Entry Points (CEPs) jsou mentální spouštěče, které vedou zákazníka k nákupu v dané kategorii — konkrétní situace, potřeby nebo kontexty, ve kterých si vzpomene na vaši značku. Čím více CEPs vaše značka obsadí v myslích zákazníků, tím vyšší je pravděpodobnost, že ji zvolí." data-en="Category Entry Points (CEPs) are the mental triggers that lead a customer to purchase in a given category — specific situations, needs or contexts in which they think of your brand. The more CEPs your brand owns in customers' minds, the higher the likelihood they will choose you.">Category Entry Points (CEPs) jsou mentální spouštěče, které vedou zákazníka k nákupu v dané kategorii — konkrétní situace, potřeby nebo kontexty, ve kterých si vzpomene na vaši značku. Čím více CEPs vaše značka obsadí v myslích zákazníků, tím vyšší je pravděpodobnost, že ji zvolí.</div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-trigger" onclick="toggleFaq(this.parentElement)">
-        <div class="faq-trigger-left"><span class="faq-tag">Category Entry Points</span><span class="faq-question-text" data-cz="Jak CEPs identifikujete pro konkrétní kategorii?" data-en="How do you identify CEPs for a specific category?">Jak CEPs identifikujete pro konkrétní kategorii?</span></div>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer" data-cz="Kombinuji kvalitativní výzkum (hloubkové rozhovory, etnografie) s kvantitativními daty o nákupním chování. Klíčové je mapování situací, emocí a kontextů, ve kterých zákazníci vstupují do kategorie. Výsledkem je mapa CEPs s prioritizací podle dosahu a relevance pro vaši značku." data-en="I combine qualitative research (in-depth interviews, ethnography) with quantitative purchase behaviour data. The key is mapping the situations, emotions and contexts in which customers enter the category. The result is a CEP map prioritised by reach and relevance for your brand.">Kombinuji kvalitativní výzkum (hloubkové rozhovory, etnografie) s kvantitativními daty o nákupním chování. Klíčové je mapování situací, emocí a kontextů, ve kterých zákazníci vstupují do kategorie. Výsledkem je mapa CEPs s prioritizací podle dosahu a relevance pro vaši značku.</div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-trigger" onclick="toggleFaq(this.parentElement)">
-        <div class="faq-trigger-left"><span class="faq-tag">Evidence-Based Marketing</span><span class="faq-question-text" data-cz="Co konkrétně znamená evidence-based marketing?" data-en="What exactly does evidence-based marketing mean?">Co konkrétně znamená evidence-based marketing?</span></div>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer" data-cz="Evidence-based marketing znamená, že každé strategické rozhodnutí je podložené robustními důkazy — nikoliv intuicí, trendy nebo best practices od konkurence. Vycházím z akademického výzkumu (Byron Sharp, Binet &amp; Field, Kahneman), vlastní analýzy dat klienta a testování hypotéz." data-en="Evidence-based marketing means every strategic decision is backed by robust evidence — not intuition, trends or competitors' best practices. I draw on academic research (Byron Sharp, Binet &amp; Field, Kahneman), client data analysis and hypothesis testing.">Evidence-based marketing znamená, že každé strategické rozhodnutí je podložené robustními důkazy — nikoliv intuicí, trendy nebo best practices od konkurence. Vycházím z akademického výzkumu (Byron Sharp, Binet &amp; Field, Kahneman), vlastní analýzy dat klienta a testování hypotéz.</div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-trigger" onclick="toggleFaq(this.parentElement)">
-        <div class="faq-trigger-left"><span class="faq-tag">Evidence-Based Marketing</span><span class="faq-question-text" data-cz="Jak se liší od klasického data-driven marketingu?" data-en="How is it different from classic data-driven marketing?">Jak se liší od klasického data-driven marketingu?</span></div>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer" data-cz="Data-driven marketing se zaměřuje primárně na operativní data z kampaní — kliky, konverze, ROAS. Evidence-based marketing jde hlouběji: pracuje s výzkumem zákaznického chování, psychologií rozhodování a dlouhodobými efekty marketingových investic." data-en="Data-driven marketing focuses primarily on operational campaign data — clicks, conversions, ROAS. Evidence-based marketing goes deeper: it works with customer behaviour research, decision psychology and the long-term effects of marketing investments.">Data-driven marketing se zaměřuje primárně na operativní data z kampaní — kliky, konverze, ROAS. Evidence-based marketing jde hlouběji: pracuje s výzkumem zákaznického chování, psychologií rozhodování a dlouhodobými efekty marketingových investic.</div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-trigger" onclick="toggleFaq(this.parentElement)">
-        <div class="faq-trigger-left"><span class="faq-tag" data-cz="Konkurenční analýza" data-en="Competitive Analysis">Konkurenční analýza</span><span class="faq-question-text" data-cz="Jak vypadá vaše konkurenční analýza v praxi?" data-en="What does your competitive analysis look like in practice?">Jak vypadá vaše konkurenční analýza v praxi?</span></div>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer" data-cz="Analyzuji positioning konkurentů, jejich CEPs a mentální dostupnost v kategorii, kreativní strategii a mediální mix, cenovou architekturu a hodnotové propozice. Výsledkem je strategická mapa kategorie, která odhalí bílá místa a příležitosti pro diferenciaci." data-en="I analyse competitors' positioning, their CEPs and mental availability in the category, creative strategy and media mix, price architecture and value propositions. The result is a strategic category map that reveals white spaces and opportunities for differentiation.">Analyzuji positioning konkurentů, jejich CEPs a mentální dostupnost v kategorii, kreativní strategii a mediální mix, cenovou architekturu a hodnotové propozice. Výsledkem je strategická mapa kategorie, která odhalí bílá místa a příležitosti pro diferenciaci.</div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-trigger" onclick="toggleFaq(this.parentElement)">
-        <div class="faq-trigger-left"><span class="faq-tag" data-cz="Konkurenční analýza" data-en="Competitive Analysis">Konkurenční analýza</span><span class="faq-question-text" data-cz="Jak z konkurenční analýzy těžím pro brand strategii?" data-en="How do you use competitive analysis for brand strategy?">Jak z konkurenční analýzy těžím pro brand strategii?</span></div>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer" data-cz="Konkurenční analýza je vstupem pro positioning, ne cílem sama o sobě. Cílem není být lepší než konkurence ve stejných dimenzích — cílem je najít a obsadit teritorium, kde můžete vyhrát na vlastních podmínkách." data-en="Competitive analysis is an input for positioning, not an end in itself. The goal is not to be better than the competition on the same dimensions — the goal is to find and own a territory where you can win on your own terms.">Konkurenční analýza je vstupem pro positioning, ne cílem sama o sobě. Cílem není být lepší než konkurence ve stejných dimenzích — cílem je najít a obsadit teritorium, kde můžete vyhrát na vlastních podmínkách.</div>
-    </div>
-
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this.parentElement)"><div class="faq-trigger-left"><span class="faq-tag">Category Entry Points</span><span class="faq-question-text" data-cz="Co jsou CEPs a proč jsou pro growth klíčové?" data-en="What are CEPs and why are they key to growth?">Co jsou CEPs a proč jsou pro growth klíčové?</span></div><span class="faq-icon">+</span></button><div class="faq-answer" data-cz="CEPs jsou konkrétní situace, potřeby a kontexty, ve kterých zákazník vstupuje do nákupního procesu. Čím více CEPs vaše značka obsadí v paměti zákazníků, tím vyšší je pravděpodobnost, že ji zvolí — bez ohledu na cenu." data-en="CEPs are the specific situations, needs and contexts in which a customer enters the purchase process. The more CEPs your brand occupies in customers' memory, the higher the likelihood they'll choose you — regardless of price.">CEPs jsou konkrétní situace, potřeby a kontexty, ve kterých zákazník vstupuje do nákupního procesu. Čím více CEPs vaše značka obsadí v paměti zákazníků, tím vyšší je pravděpodobnost, že ji zvolí — bez ohledu na cenu.</div></div>
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this.parentElement)"><div class="faq-trigger-left"><span class="faq-tag">Evidence-Based Marketing</span><span class="faq-question-text" data-cz="Jak se evidence-based liší od toho, co dělají ostatní?" data-en="How is evidence-based different from what others do?">Jak se evidence-based liší od toho, co dělají ostatní?</span></div><span class="faq-icon">+</span></button><div class="faq-answer" data-cz="Většina marketingu stojí na intuici, trendech a best practices zkopírovaných od konkurence. Evidence-based přístup vyžaduje, aby každé rozhodnutí mělo kauzální logiku podpořenou daty. Vycházím z akademického výzkumu (Binet &amp; Field, Byron Sharp, Kahneman)." data-en="Most marketing is built on intuition, trends and best practices copied from competitors. Evidence-based requires every decision to have causal logic supported by data. I draw on academic research (Binet &amp; Field, Byron Sharp, Kahneman).">Většina marketingu stojí na intuici, trendech a best practices zkopírovaných od konkurence. Evidence-based přístup vyžaduje, aby každé rozhodnutí mělo kauzální logiku podpořenou daty. Vycházím z akademického výzkumu (Binet &amp; Field, Byron Sharp, Kahneman).</div></div>
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this.parentElement)"><div class="faq-trigger-left"><span class="faq-tag" data-cz="Spolupráce" data-en="Collaboration">Spolupráce</span><span class="faq-question-text" data-cz="S jakými firmami spolupracujete?" data-en="What companies do you work with?">S jakými firmami spolupracujete?</span></div><span class="faq-icon">+</span></button><div class="faq-answer" data-cz="Spolupracuji s firmami, kde marketing přímo ovlivňuje obchodní výsledky — typicky B2B, SaaS, D2C a FMCG. Pracuji s omezeným počtem klientů současně. Neposkytují retainer s měsíčním reportem — poskytují strategické partnerství s jasnými výsledky." data-en="I work with companies where marketing directly impacts business outcomes — typically B2B, SaaS, D2C and FMCG. I work with a limited number of clients. Not a retainer with a monthly report — strategic partnership with clearly defined outputs.">Spolupracuji s firmami, kde marketing přímo ovlivňuje obchodní výsledky — typicky B2B, SaaS, D2C a FMCG. Pracuji s omezeným počtem klientů současně. Neposkytují retainer s měsíčním reportem — poskytují strategické partnerství s jasnými výsledky.</div></div>
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this.parentElement)"><div class="faq-trigger-left"><span class="faq-tag" data-cz="Konkurenční analýza" data-en="Competitive Analysis">Konkurenční analýza</span><span class="faq-question-text" data-cz="Jak přistupujete ke konkurenční analýze?" data-en="How do you approach competitive analysis?">Jak přistupujete ke konkurenční analýze?</span></div><span class="faq-icon">+</span></button><div class="faq-answer" data-cz="Cílem není být lepší než konkurence ve stejných dimenzích — to vede k cenové válce. Cílem je identifikovat territory, kde vaše značka může vyhrát na vlastních podmínkách. Analyzuji CEPs, které jsou přesycené konkurencí, a hledám prostor pro diferenciaci." data-en="The goal is not to be better than competitors on the same dimensions — that leads to price war. The goal is to identify territory where your brand can win on its own terms. I analyse CEPs saturated by competitors and find differentiation space.">Cílem není být lepší než konkurence ve stejných dimenzích — to vede k cenové válce. Cílem je identifikovat territory, kde vaše značka může vyhrát na vlastních podmínkách. Analyzuji CEPs, které jsou přesycené konkurencí, a hledám prostor pro diferenciaci.</div></div>
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this.parentElement)"><div class="faq-trigger-left"><span class="faq-tag" data-cz="ROI &amp; Měření" data-en="ROI &amp; Measurement">ROI &amp; Měření</span><span class="faq-question-text" data-cz="Jak měříte úspěch?" data-en="How do you measure success?">Jak měříte úspěch?</span></div><span class="faq-icon">+</span></button><div class="faq-answer" data-cz="Každý engagement začíná definicí měřitelných cílů a baseline dat. Používám kombinaci leading a lagging indicators. Kauzalitu ověřuji přes testování a statistickou analýzu. Ne korelace — kauzalita." data-en="Every engagement starts with defining measurable goals and baseline data. I use a combination of leading and lagging indicators. I verify causality through testing and statistical analysis. Not correlation — causality.">Každý engagement začíná definicí měřitelných cílů a baseline dat. Používám kombinaci leading a lagging indicators. Kauzalitu ověřuji přes testování a statistickou analýzu. Ne korelace — kauzalita.</div></div>
   </div>
 </section>
 
 <section class="about" id="about">
-  <div class="about-left">
-    <h2 class="about-title" data-cz="O mně" data-en="About me">O mně</h2>
+  <div>
+    <div class="about-label" data-cz="O mně" data-en="About">O mně</div>
     <div class="about-name">Ing. Lukáš Cikánek</div>
+    <div class="about-title-sub" data-cz="Marketing Strategist · Growth Partner" data-en="Marketing Strategist · Growth Partner">Marketing Strategist · Growth Partner</div>
   </div>
-  <div class="about-right">
-    <p class="about-text" data-cz="Jsem marketingový stratég a growth partner se zkušenostmi z agenturního i klientského prostředí. Pomáhám firmám nastavit strategii růstu, která stojí na datech a pochopení zákaznického chování – ne na intuici a trendech." data-en="I am a marketing strategist and growth partner with experience on both the agency and client side. I help companies build a growth strategy grounded in data and customer behaviour understanding — not intuition or trends.">Jsem marketingový stratég a growth partner se zkušenostmi z agenturního i klientského prostředí. Pomáhám firmám nastavit strategii růstu, která stojí na datech a pochopení zákaznického chování – ne na intuici a trendech.</p>
-    <p class="about-text" data-cz="Specializuji se na propojení brand buildingu a výkonnostního marketingu. Věřím, že nejlepší výsledky vznikají tam, kde se strategické myšlení potkává s rigorózní prací s daty a behaviorální vědou." data-en="I specialise in connecting brand building and performance marketing. I believe the best results emerge where strategic thinking meets rigorous data work and behavioural science.">Specializuji se na propojení brand buildingu a výkonnostního marketingu. Věřím, že nejlepší výsledky vznikají tam, kde se strategické myšlení potkává s rigorózní prací s daty a behaviorální vědou.</p>
-    <p class="about-text" data-cz="Pracuji napříč segmenty – od startupů po korporace. Každý projekt stavím na evidence-based přístupu, kde každé rozhodnutí má svůj důvod." data-en="I work across segments — from startups to corporations. Every project is built on an evidence-based approach where every decision has a reason.">Pracuji napříč segmenty – od startupů po korporace. Každý projekt stavím na evidence-based přístupu, kde každé rozhodnutí má svůj důvod.</p>
-    <div class="about-tags">
-      <span class="tag">B2B</span><span class="tag">SaaS</span><span class="tag">Retail</span>
-      <span class="tag">FMCG</span><span class="tag">D2C</span><span class="tag">Finance</span>
-    </div>
+  <div>
+    <p class="about-text" data-cz="Nejsem marketingová agentura. Jsem strategický partner, který se zapojuje tam, kde rozhodnutí o marketingu mají přímý dopad na byznys." data-en="I'm not a marketing agency. I'm a strategic partner who gets involved where marketing decisions have a direct impact on business.">Nejsem marketingová agentura. Jsem strategický partner, který se zapojuje tam, kde rozhodnutí o marketingu mají přímý dopad na byznys.</p>
+    <p class="about-text" data-cz="Mám zkušenosti z obou stran stolu — agenturní i klientské. Vím, kde se ztrácí peníze a proč strategie selhávají — nejčastěji proto, že nikdo nepropojil brand s výkonem a výkon s obchodem." data-en="I have experience from both sides of the table — agency and client. I know where money is lost and why strategies fail — most often because no one connected brand with performance and performance with sales.">Mám zkušenosti z obou stran stolu — agenturní i klientské. Vím, kde se ztrácí peníze a proč strategie selhávají — nejčastěji proto, že nikdo nepropojil brand s výkonem a výkon s obchodem.</p>
+    <p class="about-text" data-cz="Pracuji s omezeným počtem klientů. Ne proto, abych byl exkluzivní — ale proto, abych mohl každé spolupráci věnovat čas a pozornost, které skutečná strategie vyžaduje." data-en="I work with a limited number of clients. Not to be exclusive — but because real strategy requires the time and attention I can only give to a few.">Pracuji s omezeným počtem klientů. Ne proto, abych byl exkluzivní — ale proto, abych mohl každé spolupráci věnovat čas a pozornost, které skutečná strategie vyžaduje.</p>
+    <div class="about-tags"><span class="tag">B2B</span><span class="tag">SaaS</span><span class="tag">Retail</span><span class="tag">FMCG</span><span class="tag">D2C</span><span class="tag">Finance</span></div>
   </div>
 </section>
 
 <section class="services" id="services">
   <div class="section-label" data-cz="Co nabízím" data-en="What I offer">Co nabízím</div>
-  <h2 class="services-title" data-cz="Služby postavené na důkazech." data-en="Services built on evidence.">Služby postavené na důkazech.</h2>
+  <h2 class="services-header" data-cz="Čtyři způsoby, jak spolupracuji." data-en="Four ways to work together.">Čtyři způsoby, jak spolupracuji.</h2>
+  <p class="services-sub" data-cz="Každá spolupráce začíná hlubokým pochopením vašeho byznysu. Žádné šablony. Žádná copy-paste řešení." data-en="Every collaboration starts with a deep understanding of your business. No templates. No copy-paste solutions.">Každá spolupráce začíná hlubokým pochopením vašeho byznysu. Žádné šablony. Žádná copy-paste řešení.</p>
   <div class="services-grid">
-    <div class="service-card">
-      <div class="service-tag" data-cz="Strategie" data-en="Strategy">Strategie</div>
-      <h3 class="service-title" data-cz="Marketingová strategie" data-en="Marketing Strategy">Marketingová strategie</h3>
-      <p class="service-desc" data-cz="Komplexní strategie postavená na analýze dat, chování zákazníků a tržních signálů. Žádné buzzwordy — pouze akční plán s měřitelnými výsledky." data-en="Comprehensive strategy built on data analysis, customer behaviour and market signals. No buzzwords — just an actionable plan with measurable outcomes.">Komplexní strategie postavená na analýze dat, chování zákazníků a tržních signálů. Žádné buzzwordy — pouze akční plán s měřitelnými výsledky.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-tag" data-cz="Výzkum" data-en="Research">Výzkum</div>
-      <h3 class="service-title">Market Research</h3>
-      <p class="service-desc" data-cz="Hluboký výzkum trhu, konkurence a zákazníků. Kombinace kvantitativních dat a kvalitativního porozumění pro strategická rozhodnutí." data-en="Deep research into the market, competition and customers. A combination of quantitative data and qualitative understanding for strategic decisions.">Hluboký výzkum trhu, konkurence a zákazníků. Kombinace kvantitativních dat a kvalitativního porozumění pro strategická rozhodnutí.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-tag" data-cz="Poradenství" data-en="Consulting">Poradenství</div>
-      <h3 class="service-title" data-cz="Strategické poradenství" data-en="Strategic Consulting">Strategické poradenství</h3>
-      <p class="service-desc" data-cz="Práce s vedením firem na nastavení marketingového myšlení, měřicích systémů a kultury rozhodování na základě dat." data-en="Working with company leadership to establish marketing thinking, measurement systems and a data-driven decision-making culture.">Práce s vedením firem na nastavení marketingového myšlení, měřicích systémů a kultury rozhodování na základě dat.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-tag">Workshop</div>
-      <h3 class="service-title">Framework Workshop</h3>
-      <p class="service-desc" data-cz="Interaktivní workshop pro marketingové týmy — aplikace frameworku M→S→B→S→E→C na konkrétní byznys a trh." data-en="Interactive workshop for marketing teams — applying the M→S→B→S→E→C framework to a specific business and market.">Interaktivní workshop pro marketingové týmy — aplikace frameworku M→S→B→S→E→C na konkrétní byznys a trh.</p>
-    </div>
+    <div class="service-card"><div class="service-num">01</div><h3 class="service-title" data-cz="Growth Strategy" data-en="Growth Strategy">Growth Strategy</h3><p class="service-desc" data-cz="Komplexní marketingová strategie propojující brand a performance. Vychází z dat, zákaznického výzkumu a analýzy kategorie. Výsledkem je akční plán — ne prezentace plná buzzwordů." data-en="Comprehensive marketing strategy connecting brand and performance. Built on data, customer research and category analysis. The output is an action plan — not a presentation full of buzzwords.">Komplexní marketingová strategie propojující brand a performance. Vychází z dat, zákaznického výzkumu a analýzy kategorie. Výsledkem je akční plán — ne prezentace plná buzzwordů.</p><div class="service-outcome" data-cz="Výstup: Strategie, která obstojí pod tlakem CFO i CMO." data-en="Output: A strategy that holds up under pressure from both CFO and CMO.">Výstup: Strategie, která obstojí pod tlakem CFO i CMO.</div></div>
+    <div class="service-card"><div class="service-num">02</div><h3 class="service-title">Market Research</h3><p class="service-desc" data-cz="Hluboký výzkum zákazníků, kategorie a konkurence. CEP mapping, segmentace, positioning audit. Kombinace kvantitativních a kvalitativních metod." data-en="Deep research into customers, category and competition. CEP mapping, segmentation, positioning audit. A combination of quantitative and qualitative methods.">Hluboký výzkum zákazníků, kategorie a konkurence. CEP mapping, segmentace, positioning audit. Kombinace kvantitativních a kvalitativních metod.</p><div class="service-outcome" data-cz="Výstup: Jasný obraz toho, jak vás trh vidí a kde jsou příležitosti." data-en="Output: A clear picture of how the market sees you and where the opportunities are.">Výstup: Jasný obraz toho, jak vás trh vidí a kde jsou příležitosti.</div></div>
+    <div class="service-card"><div class="service-num">03</div><h3 class="service-title" data-cz="Strategic Advisory" data-en="Strategic Advisory">Strategic Advisory</h3><p class="service-desc" data-cz="Dlouhodobé strategické partnerství pro firmy, které chtějí mít interní marketing rozhodující se na základě dat. Pracuji s vedením jako sparring partner." data-en="Long-term strategic partnership for companies that want internal marketing making data-driven decisions. I work with leadership as a sparring partner.">Dlouhodobé strategické partnerství pro firmy, které chtějí mít interní marketing rozhodující se na základě dat. Pracuji s vedením jako sparring partner.</p><div class="service-outcome" data-cz="Výstup: Marketing, který roste spolu s firmou." data-en="Output: Marketing that grows with the company.">Výstup: Marketing, který roste spolu s firmou.</div></div>
+    <div class="service-card"><div class="service-num">04</div><h3 class="service-title">Framework Workshop</h3><p class="service-desc" data-cz="Intenzivní workshop pro marketingové a obchodní týmy. Aplikace M→S→B→S→E→C frameworku na váš konkrétní byznys. Praktický, provokativní, zaměřený na výsledek." data-en="Intensive workshop for marketing and sales teams. Applying the M→S→B→S→E→C framework to your specific business. Practical, provocative, focused on outcome.">Intenzivní workshop pro marketingové a obchodní týmy. Aplikace M→S→B→S→E→C frameworku na váš konkrétní byznys. Praktický, provokativní, zaměřený na výsledek.</p><div class="service-outcome" data-cz="Výstup: Tým, který myšlí strategicky a rozhoduje se na základě dat." data-en="Output: A team that thinks strategically and makes data-driven decisions.">Výstup: Tým, který myšlí strategicky a rozhoduje se na základě dat.</div></div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div>
-    <h2 class="contact-title" data-cz="Začněme rozhovorem." data-en="Let's start a conversation.">Začněme rozhovorem.</h2>
-    <p class="contact-sub" data-cz="Spolupracuji s firmami, které berou marketing vážně. Pokud hledáte strategického partnera — ne jen dodavatele — ozvěte se." data-en="I work with companies that take marketing seriously. If you are looking for a strategic partner — not just a vendor — get in touch.">Spolupracuji s firmami, které berou marketing vážně. Pokud hledáte strategického partnera — ne jen dodavatele — ozvěte se.</p>
+    <h2 class="contact-title" data-cz="Pojďme mluvit o vašem byznysu." data-en="Let's talk about your business.">Pojďme mluvit o vašem byznysu.</h2>
+    <p class="contact-sub" data-cz="Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma." data-en="I take on new clients on an ongoing basis, but capacity is limited. The first conversation is always free.">Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma.</p>
     <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-item-icon">📞</div>
-        <div class="contact-item-text">
-          <span class="contact-item-label" data-cz="Telefon" data-en="Phone">Telefon</span>
-          <a href="tel:+420736731830" class="contact-item-value">+420 736 731 830</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-item-icon">✉️</div>
-        <div class="contact-item-text">
-          <span class="contact-item-label">E-mail</span>
-          <a href="mailto:lukascikanek@gmail.com" class="contact-item-value">lukascikanek@gmail.com</a>
-        </div>
-      </div>
+      <div class="contact-item"><div class="contact-item-icon">📞</div><div class="contact-item-text"><span class="contact-item-label" data-cz="Telefon" data-en="Phone">Telefon</span><a href="tel:+420736731830" class="contact-item-value">+420 736 731 830</a></div></div>
+      <div class="contact-item"><div class="contact-item-icon">✉️</div><div class="contact-item-text"><span class="contact-item-label">E-mail</span><a href="mailto:lukascikanek@gmail.com" class="contact-item-value">lukascikanek@gmail.com</a></div></div>
     </div>
+    <p class="contact-note" data-cz="Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví." data-en="I don't work with everyone. I'm looking for companies where marketing directly impacts results — and where leadership knows it.">Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví.</p>
   </div>
   <div>
-    <p style="font-size:1.1rem;line-height:1.8;color:rgba(255,255,255,0.6);" data-cz="Neváhejte zavolat nebo napsat e-mail. Obvykle odpovídám do 24 hodin." data-en="Feel free to call or send an email. I typically respond within 24 hours.">Neváhejte zavolat nebo napsat e-mail. Obvykle odpovídám do 24 hodin.</p>
-    <p class="contact-note" data-cz="Pracuji s omezeným počtem klientů současně, abych mohl každému projektu věnovat plnou pozornost. Pokud hledáte dlouhodobého strategického partnera, rád se s vámi potkám." data-en="I work with a limited number of clients at a time to give every project my full attention. If you are looking for a long-term strategic partner, I would be glad to meet.">Pracuji s omezeným počtem klientů současně, abych mohl každému projektu věnovat plnou pozornost. Pokud hledáte dlouhodobého strategického partnera, rád se s vámi potkám.</p>
+    <p class="contact-right-text" data-cz="Správná otázka na začátek spolupráce není &lt;strong&gt;"kolik to stojí?"&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Správná otázka je &lt;strong&gt;"co potřebujeme pochopit, abychom mohli rozhodnout správně?"&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Pokud takhle přemýšlíte — jsme na stejné vlně." data-en="The right question at the start isn't &lt;strong&gt;'how much does it cost?'&lt;/strong&gt;&lt;br&gt;&lt;br&gt;The right question is &lt;strong&gt;'what do we need to understand to decide correctly?'&lt;/strong&gt;&lt;br&gt;&lt;br&gt;If that's how you think — we're on the same page.">Správná otázka na začátek spolupráce není <strong>"kolik to stojí?"</strong><br><br>Správná otázka je <strong>"co potřebujeme pochopit, abychom mohli rozhodnout správně?"</strong><br><br>Pokud takhle přemýšlíte — jsme na stejné vlně.</p>
   </div>
 </section>
 
 <footer>
   <div class="footer-copy">Ing. Lukáš Cikánek © 2026</div>
-  <ul class="footer-links">
-    <li><a href="#">LinkedIn</a></li>
-    <li><a href="#">Twitter / X</a></li>
-    <li><a href="mailto:lukascikanek@gmail.com">E-mail</a></li>
-  </ul>
+  <ul class="footer-links"><li><a href="#">LinkedIn</a></li><li><a href="#">Twitter / X</a></li><li><a href="mailto:lukascikanek@gmail.com">E-mail</a></li></ul>
 </footer>
 
 <script>
-  // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  }
-
-  // FAQ accordion
-  function toggleFaq(item) {
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  // Language switcher
+  hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+  function closeMenu() { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }
+  function toggleFaq(item) { const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }
   function setLang(lang) {
     document.getElementById('btnCZ').classList.toggle('active', lang === 'cz');
     document.getElementById('btnEN').classList.toggle('active', lang === 'en');
     document.documentElement.lang = lang === 'cz' ? 'cs' : 'en';
-    document.querySelectorAll('[data-cz][data-en]').forEach(el => {
-      const val = el.getAttribute('data-' + lang);
-      if (val !== null) el.innerHTML = val;
-    });
-    document.title = lang === 'cz'
-      ? 'Ing. Lukáš Cikánek — Marketingový stratég'
-      : 'Ing. Lukáš Cikánek — Marketing Strategist';
+    document.querySelectorAll('[data-cz][data-en]').forEach(el => { const val = el.getAttribute('data-' + lang); if (val !== null) el.innerHTML = val; });
+    document.title = lang === 'cz' ? 'Ing. Lukáš Cikánek — Marketingový stratég' : 'Ing. Lukáš Cikánek — Marketing Strategist';
   }
 </script>
 </body>
