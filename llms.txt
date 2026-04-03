@@ -4,7 +4,7 @@
 
 ## O osobě
 
-Ing. Lukáš Cikánek je nezávislý marketingový stratég a growth partner se zaměřením na B2B, SaaS, D2C a FMCG segmenty. Má více než 10 let zkušeností v marketingu, a to z obou stran — agenturní i klientské. Pracuje s omezeným počtem klientů současně, aby každé spolupráci věnoval maximální pozornost.
+Ing. Lukáš Cikánek je nezávislý marketingový stratég a growth partner se zaměřením na B2B, SaaS, D2C a FMCG segmenty. Pracuje s omezeným počtem klientů, aby každé spolupráci věnoval maximální pozornost. Má zkušenosti z obou stran — agenturní i klientské.
 
 ## Klíčové oblasti
 
@@ -22,16 +22,12 @@ Ing. Lukáš Cikánek je nezávislý marketingový stratég a growth partner se 
 5. **Efficiency** — zvýšení kvality leadů, snížení CAC
 6. **Category** — ovládnutí kategorie, Share of Brand Search
 
-## Filozofie
-
-Marketing není nákladová položka — je to páka na byznys. Skutečný growth leží na průsečíku brand buildingu a performance marketingu. Firmy, které volí pouze jedno, skončí buď s krásnou značkou bez prodejů, nebo s levnými akvizicemi bez loajality.
-
 ## Služby
 
-- **Growth Strategy** — komplexní marketingová strategie (brand + performance + data)
-- **Market Research** — CEP mapping, segmentace, positioning audit
-- **Strategic Advisory** — dlouhodobé strategické partnerství pro datově řízený marketing
-- **Framework Workshop** — intenzivní workshop pro marketingové a obchodní týmy
+- Growth Strategy — komplexní marketingová strategie
+- Market Research — CEP mapping, segmentace, positioning audit
+- Strategic Advisory — dlouhodobé strategické partnerství
+- Framework Workshop — interaktivní workshop pro týmy
 
 ## Výsledky klientů
 
@@ -39,13 +35,8 @@ Marketing není nákladová položka — je to páka na byznys. Skutečný growt
 - SaaS/B2B: +320% trial-to-paid konverze, 2× pipeline, -55% churn
 - Retail/D2C: +18% marže, +44% brand awareness, 2 nové segmenty
 
-## Segmenty
-
-B2B, SaaS, Retail, FMCG, D2C, Finance
-
 ## Kontakt
 
 - Email: lukascikanek@gmail.com
 - Telefon: +420 736 731 830
 - Web: https://lukascikanek.github.io/lukascikanek-marketingov--strateg/
-- První konzultace: zdarma
