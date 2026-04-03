@@ -17,7 +17,4 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
-Allow: /
-
 Sitemap: https://lukascikanek.github.io/lukascikanek-marketingov--strateg/sitemap.xml
