@@ -110,7 +110,8 @@
   body { background: var(--white); color: var(--black); font-family: var(--font); overflow-x: hidden; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: var(--white); border-bottom: 1px solid var(--border); gap: 1rem; }
-  .nav-logo { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; color: var(--black); text-transform: uppercase; flex-shrink: 0; }
+  .nav-logo { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; color: var(--black); text-decoration: none; flex-shrink: 0; transition: opacity 0.2s; }
+  .nav-logo:hover { opacity: 0.65; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--gray); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--black); }
@@ -278,7 +279,7 @@
 <body>
 
 <nav aria-label="Hlavní navigace">
-  <div class="nav-logo">Ing. Lukáš Cikánek</div>
+  <a href="#hero" class="nav-logo" aria-label="Domů — Ing. Lukáš Cikánek">Ing. Lukáš Cikánek</a>
   <ul class="nav-links">
     <li><a href="#framework" data-cz="Přístup" data-en="Approach">Přístup</a></li>
     <li><a href="#case-studies">Case Studies</a></li>
