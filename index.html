@@ -186,6 +186,24 @@
   .bv-verdict { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--black); line-height: 1.6; }
   .bv-card.dark .bv-verdict { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
 
+  /* V MÉDIÍCH */
+  .media { padding: 8rem 3rem; border-top: 1px solid var(--border); background: var(--white); }
+  .media .section-label { color: var(--gray); }
+  .media-header { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+  .media-sub { font-size: 1rem; color: var(--gray); margin-bottom: 3.5rem; }
+  .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .media-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+  .media-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+  .media-card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #e8e5de; display: block; }
+  .media-card-img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--green-dark); display: flex; align-items: center; justify-content: center; }
+  .media-card-img-placeholder svg { width: 48px; height: 48px; opacity: 0.4; }
+  .media-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+  .media-card-source { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+  .media-card-title { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--black); }
+  .media-card-desc { font-size: 0.85rem; line-height: 1.65; color: var(--gray); flex: 1; }
+  .media-card-link { margin-top: 1rem; font-size: 0.8rem; font-weight: 600; color: var(--black); display: inline-flex; align-items: center; gap: 0.3rem; }
+  .media-card:hover .media-card-link { color: var(--green-dark); }
+
   .case-studies { padding: 8rem 3rem; border-top: 1px solid var(--border); background: #f0ede6; }
   .case-studies .section-label { color: var(--gray); }
   .case-studies-header { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
@@ -266,6 +284,7 @@
     .manifesto { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 2rem; }
     .framework { padding: 5rem 1.5rem; } .framework-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .brand-vs { padding: 5rem 1.5rem; } .brand-vs-grid { grid-template-columns: 1fr; }
+    .media { padding: 5rem 1.5rem; } .media-grid { grid-template-columns: 1fr; }
     .case-studies { padding: 5rem 1.5rem; } .case-card { padding: 2rem; } .case-body { grid-template-columns: 1fr; gap: 1.5rem; }
     .faq { padding: 5rem 1.5rem; }
     .about { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
@@ -404,6 +423,59 @@
       </ul>
       <p class="bv-verdict" data-cz="Problém: performance bez brandu je sprint bez cíle." data-en="Problem: performance without brand is a sprint without a destination.">Problém: performance bez brandu je sprint bez cíle.</p>
     </div>
+  </div>
+</section>
+
+<!-- V MÉDIÍCH -->
+<section class="media" id="media" aria-labelledby="media-heading">
+  <div class="section-label" data-cz="V médiích" data-en="In the media">V médiích</div>
+  <h2 class="media-header" id="media-heading" data-cz="Výsledky, které si všimli ostatní." data-en="Results others took notice of.">Výsledky, které si všimli ostatní.</h2>
+  <p class="media-sub" data-cz="Case studies, rozhovory a podcasty o přístupu, který přináší měřitelný růst." data-en="Case studies, interviews and podcasts about an approach that delivers measurable growth.">Case studies, rozhovory a podcasty o přístupu, který přináší měřitelný růst.</p>
+  <div class="media-grid">
+
+    <a href="https://www.webtop100.cz/inspirace/rust-trzeb-o-234-diky-holistickemu-pristupu-a-behavioralni-vede" class="media-card" target="_blank" rel="noopener noreferrer" aria-label="VAFO/Brit — WebTop100: Růst tržeb o 234 %">
+      <img class="media-card-img" src="https://www.webtop100.cz/media/inspiration/7ce148ba/orig/16-9_Brit-miska7506.jpeg" alt="Brit krmivo — míska s krmivem, VAFO case study" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="media-card-img-placeholder" style="display:none;">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="10" width="36" height="28" rx="3" stroke="white" stroke-width="2"/><path d="M6 18h36" stroke="white" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="white"/></svg>
+      </div>
+      <div class="media-card-body">
+        <span class="media-card-source">WebTop100 · Case Study · 2. místo</span>
+        <h3 class="media-card-title">VAFO / Brit — Růst tržeb o 234 % díky holistickému přístupu a behaviorální vědě</h3>
+        <p class="media-card-desc" data-cz="Jak krmivo-brit.cz dosáhl trojciferného meziročního růstu za 6 měsíců navzdory stagnujícímu trhu s pet-food — přes CEP mapping, behaviorální vědu a efektivní alokaci rozpočtu." data-en="How krmivo-brit.cz achieved triple-digit year-on-year growth in 6 months despite a stagnant pet-food market — through CEP mapping, behavioural science and smart budget allocation.">Jak krmivo-brit.cz dosáhl trojciferného meziročního růstu za 6 měsíců navzdory stagnujícímu trhu s pet-food — přes CEP mapping, behaviorální vědu a efektivní alokaci rozpočtu.</p>
+        <span class="media-card-link" aria-hidden="true">Číst case study ↗</span>
+      </div>
+    </a>
+
+    <a href="https://cc.cz/brandstory/jak-se-dostat-k-cilove-skupine-showmaxu-pomohl-brandbuilding-mezirocne-zvysil-prodeje-o-97-procent/" class="media-card" target="_blank" rel="noopener noreferrer" aria-label="Showmax — CzechCrunch: +97 % prodejů">
+      <img class="media-card-img" src="https://cc.cz/wp-content/uploads/fly-images/265050/new-project-22-820x512-c.jpg" alt="Showmax — streamovací platforma, brandbuilding case study" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="media-card-img-placeholder" style="display:none;">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="10" width="36" height="28" rx="3" stroke="white" stroke-width="2"/><path d="M6 18h36" stroke="white" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="white"/></svg>
+      </div>
+      <div class="media-card-body">
+        <span class="media-card-source">CzechCrunch · Brandstory</span>
+        <h3 class="media-card-title">Showmax — Brandbuilding meziročně zvýšil prodeje o 97 %</h3>
+        <p class="media-card-desc" data-cz="Jak přechod z výkonnostního marketingu na vyvážený brand+performance mix zvýšil prodeje Showmaxu o 97 % a snížil cenu za akvizici o 67 % — za pouhých šest měsíců." data-en="How shifting from performance-only to a balanced brand+performance mix grew Showmax sales by 97% and cut acquisition costs by 67% — in just six months.">Jak přechod z výkonnostního marketingu na vyvážený brand+performance mix zvýšil prodeje Showmaxu o 97 % a snížil cenu za akvizici o 67 % — za pouhých šest měsíců.</p>
+        <span class="media-card-link" aria-hidden="true">Číst článek ↗</span>
+      </div>
+    </a>
+
+    <a href="https://www.ulab.rocks/blog/takhle-se-dela-situacni-analyza%f0%9f%92%a1-marketa-kabatova-a-lukas-cikanek/" class="media-card" target="_blank" rel="noopener noreferrer" aria-label="ulab podcast — Situační analýza s Lukášem Cikánkem">
+      <div class="media-card-img-placeholder" style="display:flex; background: var(--green-dark);">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="18" stroke="white" stroke-width="2" stroke-opacity="0.6"/>
+          <circle cx="24" cy="24" r="7" stroke="white" stroke-width="2"/>
+          <path d="M24 6v4M24 38v4M6 24h4M38 24h4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.4"/>
+          <path d="M20 24l6-4v8l-6-4z" fill="white"/>
+        </svg>
+      </div>
+      <div class="media-card-body">
+        <span class="media-card-source">ulab podcast · Rozhovor</span>
+        <h3 class="media-card-title">Takhle se dělá situační analýza 💡 — Markéta Kabátová &amp; Lukáš Cikánek</h3>
+        <p class="media-card-desc" data-cz="Podcast o tom, jak správně uchopit situační analýzu před každou marketingovou strategií. Co zjistit, jak to strukturovat a proč je analýza základem každého dobrého rozhodnutí." data-en="A podcast on how to approach a situational analysis before building any marketing strategy — what to look for, how to structure it, and why it's the foundation of every good decision.">Podcast o tom, jak správně uchopit situační analýzu před každou marketingovou strategií. Co zjistit, jak to strukturovat a proč je analýza základem každého dobrého rozhodnutí.</p>
+        <span class="media-card-link" aria-hidden="true">Poslechnout podcast ↗</span>
+      </div>
+    </a>
+
   </div>
 </section>
 
