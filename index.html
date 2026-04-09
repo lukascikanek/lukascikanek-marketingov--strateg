@@ -258,16 +258,16 @@
   .service-desc { font-size: 0.92rem; line-height: 1.8; color: var(--gray); margin-bottom: 1.5rem; }
   .service-outcome { font-size: 0.8rem; font-weight: 600; color: var(--black); border-top: 1px solid var(--border); padding-top: 1rem; }
 
-  /* CONTACT — nový layout: nadpis přes celou šířku, pod ním dva sloupce */
+  /* CONTACT */
   .contact { background: var(--black); color: var(--white); padding: 8rem 3rem; }
   .contact-heading-row { margin-bottom: 4rem; }
   .contact-title { font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; width: 100%; }
   .contact-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
   .contact-sub { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.5); margin-bottom: 3rem; }
-  .contact-note { font-size: 0.83rem; line-height: 1.8; color: rgba(255,255,255,0.35); margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; }
   .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
   .contact-item { display: flex; align-items: center; gap: 1rem; }
-  .contact-item-icon { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .contact-item-icon { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-item-icon svg { width: 18px; height: 18px; }
   .contact-item-text { display: flex; flex-direction: column; gap: 0.2rem; }
   .contact-item-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
   .contact-item-value { font-size: 1rem; font-weight: 500; color: var(--white); text-decoration: none; transition: color 0.2s; }
@@ -566,18 +566,40 @@
 <!-- CONTACT -->
 <section class="contact" id="contact" aria-labelledby="contact-heading">
   <div class="contact-heading-row">
-    <h2 class="contact-title" id="contact-heading" data-cz="Pojďme mluvit o vašem byznysu." data-en="Let's talk about your business.">Pojďme mluvit o vašem byznysu.</h2>
+    <h2 class="contact-title" id="contact-heading" data-cz="Pojďme se pobavit o vašem byznysu." data-en="Let's talk about your business.">Pojďme se pobavit o vašem byznysu.</h2>
   </div>
   <div class="contact-columns">
     <div>
       <p class="contact-sub" data-cz="Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma." data-en="I take on new clients on an ongoing basis, but capacity is limited. The first conversation is always free.">Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma.</p>
-      <p class="contact-note" data-cz="Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví." data-en="I don't work with everyone. I'm looking for companies where marketing directly impacts results — and where leadership knows it.">Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví.</p>
     </div>
     <div>
       <address class="contact-info">
-        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">📞</div><div class="contact-item-text"><span class="contact-item-label" data-cz="Telefon" data-en="Phone">Telefon</span><a href="tel:+420736731830" class="contact-item-value">+420 736 731 830</a></div></div>
-        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">✉️</div><div class="contact-item-text"><span class="contact-item-label">E-mail</span><a href="mailto:lukascikanek@gmail.com" class="contact-item-value">lukascikanek@gmail.com</a></div></div>
-        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">💼</div><div class="contact-item-text"><span class="contact-item-label">LinkedIn</span><a href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-cik%C3%A1nek/" class="contact-item-value" target="_blank" rel="noopener noreferrer">Lukáš Cikánek</a></div></div>
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+            </svg>
+          </div>
+          <div class="contact-item-text"><span class="contact-item-label" data-cz="Telefon" data-en="Phone">Telefon</span><a href="tel:+420736731830" class="contact-item-value">+420 736 731 830</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+          </div>
+          <div class="contact-item-text"><span class="contact-item-label">E-mail</span><a href="mailto:lukascikanek@gmail.com" class="contact-item-value">lukascikanek@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="4"/>
+              <path d="M7 10v7M7 7v.01M12 17v-4c0-1.1.9-2 2-2s2 .9 2 2v4M12 10v7"/>
+            </svg>
+          </div>
+          <div class="contact-item-text"><span class="contact-item-label">LinkedIn</span><a href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-cik%C3%A1nek/" class="contact-item-value" target="_blank" rel="noopener noreferrer">Lukáš Cikánek</a></div>
+        </div>
       </address>
     </div>
   </div>
