@@ -258,9 +258,13 @@
   .service-desc { font-size: 0.92rem; line-height: 1.8; color: var(--gray); margin-bottom: 1.5rem; }
   .service-outcome { font-size: 0.8rem; font-weight: 600; color: var(--black); border-top: 1px solid var(--border); padding-top: 1rem; }
 
-  .contact { background: var(--black); color: var(--white); padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
-  .contact-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.0; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
+  /* CONTACT — nový layout: nadpis přes celou šířku, pod ním dva sloupce */
+  .contact { background: var(--black); color: var(--white); padding: 8rem 3rem; }
+  .contact-heading-row { margin-bottom: 4rem; }
+  .contact-title { font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; width: 100%; }
+  .contact-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
   .contact-sub { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.5); margin-bottom: 3rem; }
+  .contact-note { font-size: 0.83rem; line-height: 1.8; color: rgba(255,255,255,0.35); margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; }
   .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
   .contact-item { display: flex; align-items: center; gap: 1rem; }
   .contact-item-icon { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
@@ -268,8 +272,6 @@
   .contact-item-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
   .contact-item-value { font-size: 1rem; font-weight: 500; color: var(--white); text-decoration: none; transition: color 0.2s; }
   .contact-item-value:hover { color: rgba(255,255,255,0.65); }
-  .contact-note { font-size: 0.83rem; line-height: 1.8; color: rgba(255,255,255,0.35); margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; }
-  .contact-right-text { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,0.55); }
 
   footer { padding: 2rem 3rem; border-top: 1px solid rgba(255,255,255,0.07); background: var(--black); display: flex; justify-content: space-between; align-items: center; }
   .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
@@ -291,7 +293,7 @@
     .faq { padding: 5rem 1.5rem; }
     .about { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
     .services { padding: 5rem 1.5rem; } .services-grid { grid-template-columns: 1fr; }
-    .contact { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+    .contact { padding: 5rem 1.5rem; } .contact-columns { grid-template-columns: 1fr; gap: 3rem; }
     footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; }
   }
   @media (max-width: 480px) { .framework-grid { grid-template-columns: 1fr; } .hero-buttons { flex-direction: column; } .btn-primary, .btn-secondary { justify-content: center; } }
@@ -563,17 +565,21 @@
 
 <!-- CONTACT -->
 <section class="contact" id="contact" aria-labelledby="contact-heading">
-  <div>
+  <div class="contact-heading-row">
     <h2 class="contact-title" id="contact-heading" data-cz="Pojďme mluvit o vašem byznysu." data-en="Let's talk about your business.">Pojďme mluvit o vašem byznysu.</h2>
-    <p class="contact-sub" data-cz="Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma." data-en="I take on new clients on an ongoing basis, but capacity is limited. The first conversation is always free.">Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma.</p>
-    <address class="contact-info">
-      <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">📞</div><div class="contact-item-text"><span class="contact-item-label" data-cz="Telefon" data-en="Phone">Telefon</span><a href="tel:+420736731830" class="contact-item-value">+420 736 731 830</a></div></div>
-      <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">✉️</div><div class="contact-item-text"><span class="contact-item-label">E-mail</span><a href="mailto:lukascikanek@gmail.com" class="contact-item-value">lukascikanek@gmail.com</a></div></div>
-    </address>
-    <p class="contact-note" data-cz="Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví." data-en="I don't work with everyone. I'm looking for companies where marketing directly impacts results — and where leadership knows it.">Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví.</p>
   </div>
-  <div>
-    <p class="contact-right-text" data-cz="Správná otázka na začátek spolupráce není &lt;strong&gt;'kolik to stojí?'&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Správná otázka je &lt;strong&gt;'co potřebujeme pochopit, abychom mohli rozhodnout správně?'&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Pokud takhle přemýšlíte — jsme na stejné vlně." data-en="The right question at the start isn't &lt;strong&gt;'how much does it cost?'&lt;/strong&gt;&lt;br&gt;&lt;br&gt;The right question is &lt;strong&gt;'what do we need to understand to decide correctly?'&lt;/strong&gt;&lt;br&gt;&lt;br&gt;If that's how you think — we're on the same page.">Správná otázka na začátek spolupráce není <strong>'kolik to stojí?'</strong><br><br>Správná otázka je <strong>'co potřebujeme pochopit, abychom mohli rozhodnout správně?'</strong><br><br>Pokud takhle přemýšlíte — jsme na stejné vlně.</p>
+  <div class="contact-columns">
+    <div>
+      <p class="contact-sub" data-cz="Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma." data-en="I take on new clients on an ongoing basis, but capacity is limited. The first conversation is always free.">Přijímám nové klienty průběžně, ale kapacita je omezená. První rozhovor je vždy zdarma.</p>
+      <p class="contact-note" data-cz="Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví." data-en="I don't work with everyone. I'm looking for companies where marketing directly impacts results — and where leadership knows it.">Nespolupracuji s každým. Hledám firmy, kde marketing přímo ovlivňuje výsledky — a kde vedení to ví.</p>
+    </div>
+    <div>
+      <address class="contact-info">
+        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">📞</div><div class="contact-item-text"><span class="contact-item-label" data-cz="Telefon" data-en="Phone">Telefon</span><a href="tel:+420736731830" class="contact-item-value">+420 736 731 830</a></div></div>
+        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">✉️</div><div class="contact-item-text"><span class="contact-item-label">E-mail</span><a href="mailto:lukascikanek@gmail.com" class="contact-item-value">lukascikanek@gmail.com</a></div></div>
+        <div class="contact-item"><div class="contact-item-icon" aria-hidden="true">💼</div><div class="contact-item-text"><span class="contact-item-label">LinkedIn</span><a href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-cik%C3%A1nek/" class="contact-item-value" target="_blank" rel="noopener noreferrer">Lukáš Cikánek</a></div></div>
+      </address>
+    </div>
   </div>
 </section>
 
